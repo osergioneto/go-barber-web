@@ -18,7 +18,7 @@ const SignUp: React.FC = () => {
       <Content>
         <img src={logoImg} alt="Go Barber Logo" />
 
-        <Form initialData={{ name: 'Sérgio Neto' }} onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <h1>Faça seu cadastro</h1>
 
           <Input icon={FiUser} name="name" placeholder="Nome"></Input>
