@@ -19,17 +19,17 @@ const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const handleSubmit = useCallback(async (data: ISignUpUser) => {
-    formRef.current?.setErrors({});
-
-    const schema = Yup.object().shape({
-      name: Yup.string().required('Nome obrigatório'),
-      email: Yup.string()
-        .required('Email obrigatório')
-        .email('Digite um email válido'),
-      password: Yup.string().min(6, 'No mínimo 6 digitos'),
-    });
-
     try {
+      formRef.current?.setErrors({});
+
+      const schema = Yup.object().shape({
+        name: Yup.string().required('Nome obrigatório'),
+        email: Yup.string()
+          .required('Email obrigatório')
+          .email('Digite um email válido'),
+        password: Yup.string().min(6, 'No mínimo 6 digitos'),
+      });
+
       await schema.validate(data, { abortEarly: false });
     } catch (error) {
       console.log(error);
@@ -49,7 +49,7 @@ const SignUp: React.FC = () => {
           <h1>Faça seu cadastro</h1>
 
           <Input icon={FiUser} name="name" placeholder="Nome"></Input>
-          <Input icon={FiMail} name="user" placeholder="E-mail"></Input>
+          <Input icon={FiMail} name="email" placeholder="E-mail"></Input>
           <Input
             icon={FiLock}
             name="password"
