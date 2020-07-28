@@ -8,6 +8,7 @@ import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import getValidationErrors from '../../utils/getValidationErrors';
+import { Link } from 'react-router-dom';
 
 interface ISignUpUser {
   name: string;
@@ -60,10 +61,10 @@ const SignUp: React.FC = () => {
           <Button type="submit">Cadastrar</Button>
         </Form>
 
-        <a href="#">
+        <Link to="/">
           <FiArrowLeft />
           Voltar para login
-        </a>
+        </Link>
       </Content>
     </Container>
   );
