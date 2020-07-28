@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 import logoImg from '../../assets/logo.svg';
-import { Background, Container, Content } from './styles';
+import { Background, Container, Content, AnimationContainer } from './styles';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import { FiArrowLeft, FiLock, FiMail, FiUser } from 'react-icons/fi';
@@ -43,29 +43,31 @@ const SignUp: React.FC = () => {
     <Container>
       <Background />
 
-      <Content>
-        <img src={logoImg} alt="Go Barber Logo" />
+      <AnimationContainer>
+        <Content>
+          <img src={logoImg} alt="Go Barber Logo" />
 
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <h1>Faça seu cadastro</h1>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <h1>Faça seu cadastro</h1>
 
-          <Input icon={FiUser} name="name" placeholder="Nome"></Input>
-          <Input icon={FiMail} name="email" placeholder="E-mail"></Input>
-          <Input
-            icon={FiLock}
-            name="password"
-            type="password"
-            placeholder="Senha"
-          ></Input>
+            <Input icon={FiUser} name="name" placeholder="Nome"></Input>
+            <Input icon={FiMail} name="email" placeholder="E-mail"></Input>
+            <Input
+              icon={FiLock}
+              name="password"
+              type="password"
+              placeholder="Senha"
+            ></Input>
 
-          <Button type="submit">Cadastrar</Button>
-        </Form>
+            <Button type="submit">Cadastrar</Button>
+          </Form>
 
-        <Link to="/">
-          <FiArrowLeft />
-          Voltar para login
-        </Link>
-      </Content>
+          <Link to="/">
+            <FiArrowLeft />
+            Voltar para login
+          </Link>
+        </Content>
+      </AnimationContainer>
     </Container>
   );
 };

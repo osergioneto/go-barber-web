@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useContext } from 'react';
 import logoImg from '../../assets/logo.svg';
-import { Background, Container, Content } from './styles';
+import { Background, Container, Content, AnimationContainer } from './styles';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import { FiLogIn, FiLock, FiMail } from 'react-icons/fi';
@@ -59,34 +59,36 @@ const SignIn: React.FC = () => {
 
   return (
     <Container>
-      <Content>
-        <img src={logoImg} alt="Go Barber Logo" />
+      <AnimationContainer>
+        <Content>
+          <img src={logoImg} alt="Go Barber Logo" />
 
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <h1>Entre aqui</h1>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <h1>Entre aqui</h1>
 
-          <Input
-            icon={FiMail}
-            name="email"
-            type="text"
-            placeholder="Email"
-          ></Input>
-          <Input
-            icon={FiLock}
-            name="password"
-            type="password"
-            placeholder="Senha"
-          ></Input>
+            <Input
+              icon={FiMail}
+              name="email"
+              type="text"
+              placeholder="Email"
+            ></Input>
+            <Input
+              icon={FiLock}
+              name="password"
+              type="password"
+              placeholder="Senha"
+            ></Input>
 
-          <Button type="submit">Enviar</Button>
-          <a href="#">Esqueci minha senha</a>
-        </Form>
+            <Button type="submit">Enviar</Button>
+            <a href="#">Esqueci minha senha</a>
+          </Form>
 
-        <Link to="/signup">
-          <FiLogIn />
-          Criar conta
-        </Link>
-      </Content>
+          <Link to="/signup">
+            <FiLogIn />
+            Criar conta
+          </Link>
+        </Content>
+      </AnimationContainer>
 
       <Background />
     </Container>
