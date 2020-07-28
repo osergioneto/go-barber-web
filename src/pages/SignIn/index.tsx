@@ -7,7 +7,7 @@ import { FiLogIn, FiLock, FiMail } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { FormHandles } from '@unform/core';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import getValidationErrors from '../../utils/getValidationErrors';
 import { useAuth } from '../../hooks/auth';
@@ -22,6 +22,7 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { signIn, signOut, user } = useAuth();
   const { addToast } = useToast();
+  const history = useHistory();
 
   const handleSubmit = useCallback(
     async (data: SignInFormData) => {
@@ -48,13 +49,15 @@ const SignIn: React.FC = () => {
         }
 
         addToast({
-          type: 'info',
+          type: 'error',
           title: 'Erro na autenticação',
           description: 'Ocorreu nas credenciais',
         });
+
+        history.push('/dashboard');
       }
     },
-    [signIn],
+    [signIn, history],
   );
 
   return (
@@ -80,7 +83,7 @@ const SignIn: React.FC = () => {
             ></Input>
 
             <Button type="submit">Enviar</Button>
-            <a href="#">Esqueci minha senha</a>
+            <a href="/forgot-password">Esqueci minha senha</a>
           </Form>
 
           <Link to="/signup">
