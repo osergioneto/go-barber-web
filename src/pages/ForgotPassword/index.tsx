@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useContext, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import logoImg from '../../assets/logo.svg';
 import { Background, Container, Content, AnimationContainer } from './styles';
 import Input from '../../components/Input';

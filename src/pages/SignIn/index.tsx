@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useContext } from 'react';
+import React, { useCallback, useRef } from 'react';
 import logoImg from '../../assets/logo.svg';
 import { Background, Container, Content, AnimationContainer } from './styles';
 import Input from '../../components/Input';
@@ -20,7 +20,7 @@ interface SignInFormData {
 
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-  const { signIn, signOut, user } = useAuth();
+  const { signIn } = useAuth();
   const { addToast } = useToast();
   const history = useHistory();
 
@@ -57,7 +57,7 @@ const SignIn: React.FC = () => {
         });
       }
     },
-    [signIn, history],
+    [addToast, signIn, history],
   );
 
   return (

@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useContext } from 'react';
+import React, { useCallback, useRef } from 'react';
 import logoImg from '../../assets/logo.svg';
 import { Background, Container, Content, AnimationContainer } from './styles';
 import Input from '../../components/Input';
@@ -7,7 +7,7 @@ import { FiLock } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { FormHandles } from '@unform/core';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import api from '../../services/api';
 
 import getValidationErrors from '../../utils/getValidationErrors';
