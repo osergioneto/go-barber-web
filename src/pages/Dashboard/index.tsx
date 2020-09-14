@@ -47,7 +47,7 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     api
-      .get(`/provider/${user.id}/month-availability`, {
+      .get(`/providers/${user.id}/month-availability`, {
         params: {
           year: currentMonth.getFullYear(),
           month: currentMonth.getMonth() + 1,
@@ -85,8 +85,8 @@ const Dashboard: React.FC = () => {
             </div>
           </Profile>
 
-          <button type="button">
-            <FiPower></FiPower>
+          <button onClick={signOut} type="button">
+            <FiPower />
           </button>
         </HeaderContent>
       </Header>
